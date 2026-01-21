@@ -37,11 +37,14 @@ main {
     font-size: clamp(2rem, 10vw, 4.5rem);
     font-weight: 700;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--text-primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    word-break: break-word;
+}
+
+.title-agent {
+    color: var(--text-primary);
+}
+
+.title-coder {
+    color: var(--accent);
 }
 
 .tagline {

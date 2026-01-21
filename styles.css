@@ -34,13 +34,14 @@ main {
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 10vw, 4.5rem);
     font-weight: 700;
     margin-bottom: 1rem;
     background: linear-gradient(135deg, var(--text-primary), var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    word-break: break-word;
 }
 
 .tagline {
@@ -109,10 +110,6 @@ footer a:hover {
 @media (min-width: 640px) {
     .hero {
         padding: 8rem 2rem;
-    }
-
-    .hero h1 {
-        font-size: 4.5rem;
     }
 
     .tagline {

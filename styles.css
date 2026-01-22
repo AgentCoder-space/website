@@ -1,10 +1,12 @@
 :root {
     --bg-primary: #0d1117;
     --bg-secondary: #161b22;
+    --bg-tertiary: #1c2128;
     --text-primary: #f0f6fc;
     --text-secondary: #8b949e;
     --accent: #58a6ff;
     --accent-hover: #79b8ff;
+    --accent-light: rgba(88, 166, 255, 0.1);
 }
 
 * {
@@ -30,13 +32,16 @@ main {
 
 .hero {
     text-align: center;
-    padding: 6rem 1.5rem;
+    padding: 6rem 1.5rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .hero h1 {
     font-size: clamp(2rem, 10vw, 4.5rem);
     font-weight: 700;
     margin-bottom: 1rem;
+    line-height: 1.1;
 }
 
 .title-agent {
@@ -48,33 +53,112 @@ main {
 }
 
 .tagline {
-    font-size: 1.25rem;
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.subtitle {
+    font-size: 1.125rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 0.875rem 2rem;
+    padding: 1rem 2.5rem;
     background-color: var(--accent);
     color: var(--bg-primary);
     text-decoration: none;
     font-weight: 600;
-    border-radius: 6px;
-    transition: background-color 0.2s ease;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-size: 1.125rem;
 }
 
 .cta-button:hover {
     background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(88, 166, 255, 0.3);
+}
+
+.cta-button-large {
+    padding: 1.25rem 3rem;
+    font-size: 1.25rem;
+}
+
+.value-prop {
+    background-color: var(--bg-secondary);
+    padding: 4rem 1.5rem;
+    margin: 2rem 0;
+}
+
+.value-prop-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.value-prop-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.value-text {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--bg-tertiary);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.benefit-icon {
+    font-size: 1.5rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
 }
 
 .features {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.features-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 4rem;
 }
 
 .feature {
@@ -82,16 +166,142 @@ main {
     padding: 2rem;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
 }
 
-.feature h2 {
+.feature:hover {
+    border-color: var(--accent);
+    background-color: var(--bg-tertiary);
+    transform: translateY(-2px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.feature h3 {
     font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     color: var(--text-primary);
 }
 
 .feature p {
     color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.use-cases {
+    background-color: var(--bg-secondary);
+    padding: 4rem 1.5rem;
+    margin: 2rem 0;
+}
+
+.use-cases-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.use-case {
+    background-color: var(--bg-tertiary);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.use-case h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.use-case p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.advantages {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.advantages-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.advantage {
+    padding: 2rem;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.advantage h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--accent);
+}
+
+.advantage p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    padding: 5rem 1.5rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.cta-section > p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+
+.getting-started {
+    max-width: 700px;
+    margin: 3rem auto 0;
+    padding: 2rem;
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+.getting-started h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.getting-started ol {
+    list-style-position: inside;
+    color: var(--text-secondary);
+    line-height: 2;
+}
+
+.getting-started code {
+    background-color: var(--bg-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9em;
+    color: var(--accent);
 }
 
 footer {
@@ -99,6 +309,7 @@ footer {
     padding: 2rem 1.5rem;
     color: var(--text-secondary);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
 }
 
 footer a {
@@ -112,15 +323,34 @@ footer a:hover {
 
 @media (min-width: 640px) {
     .hero {
-        padding: 8rem 2rem;
+        padding: 8rem 2rem 5rem;
     }
 
-    .tagline {
-        font-size: 1.5rem;
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .features {
+    .use-cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .use-cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .advantages-list {
         grid-template-columns: repeat(3, 1fr);
-        padding: 3rem 2rem 6rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
